@@ -1,2 +1,3 @@
 # qute-corpus
-Database corpus Qur'an dll, yang diapakai platform Qute
+
+Database corpus Qur'an dll, yang dipakai platform Qute
