@@ -1,7 +1,8 @@
 {
   "lang": "ar",
-  "source": "Tanzil",
-  "source_url": "https://tanzil.net/",
+  "version": "0.1.0",
+  "source": "Kemenag RI",
+  "source_url": "https://kemenag.go.id/",
   "quran": [
     {
       "surah": 1,
