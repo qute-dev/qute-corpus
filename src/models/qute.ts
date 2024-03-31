@@ -1,11 +1,13 @@
+export type LocationType = 'madaniyah' | 'makkiyah';
+
 export interface Chapter {
   id: number;
   name: string;
   arabic: string;
-  latin: string;
+  translation?: string;
   verses: number;
   page: number;
-  location: 'makkiyah' | 'madaniyah';
+  location: LocationType;
 }
 
 export interface Verse {
