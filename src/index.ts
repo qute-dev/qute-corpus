@@ -1,6 +1,6 @@
 const fse = require('fs-extra');
 
-import { Meta, Quran } from './models';
+import { Meta, Quran } from './models/qute';
 
 export * from './models/qute';
 
