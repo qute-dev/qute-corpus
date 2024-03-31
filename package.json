@@ -2,6 +2,7 @@
   "name": "qute-corpus",
   "version": "0.1.0",
   "description": "Database corpus Qur'an dll, dipakai platform Qute",
+  "type": "commonjs",
   "scripts": {
     "scrap:kemenag": "ts-node src/scrap-kemenag.ts",
     "convert:kemenag": "ts-node src/convert-kemenag.ts",
