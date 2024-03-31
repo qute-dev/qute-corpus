@@ -1,5 +1,16 @@
 export type LocationType = 'madaniyah' | 'makkiyah';
 
+export interface Quran {
+  lang: 'ar' | 'id';
+  chapters: Chapter[];
+  verses: Verse[];
+}
+
+export interface Meta {
+  chapters: Chapter[];
+  verses: Verse[];
+}
+
 export interface Chapter {
   id: number;
   name: string;
