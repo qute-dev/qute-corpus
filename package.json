@@ -1,6 +1,6 @@
 {
   "name": "qute-corpus",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "Database corpus Qur'an dll, dipakai platform Qute",
   "main": "lib/index.js",
   "scripts": {
