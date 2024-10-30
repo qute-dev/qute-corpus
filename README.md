@@ -1,3 +1,3 @@
 # qute-corpus
 
-Database corpus Qur'an dll, yang dipakai platform Qute
+Corpus scrapper & builder for Qur'an, tafsir, hadits, etc.
