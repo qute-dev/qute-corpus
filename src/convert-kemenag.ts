@@ -1,11 +1,13 @@
 const fse = require('fs-extra');
 
 import {
+  BaseVerse,
   Chapter,
   LocationType,
   QuranAyah,
   QuranSurah,
   QuranTafsir,
+  TafsirVerse,
   Verse,
 } from './models';
 
@@ -95,6 +97,26 @@ const versesId: Verse[] = ayahs.data.map((a) => ({
   words: [],
 }));
 
+console.log('Converting ID (wajiz)tafsirs...');
+const tafsirWajizId: TafsirVerse[] = tafsirs.data.map((a) => ({
+  id: a.id,
+  chapter: a.surah_id,
+  verse: a.ayah,
+  text: a.tafsir.wajiz?.trim(),
+  arabic: a.arabic?.trim(),
+  translation: a.translation?.trim(),
+}));
+
+console.log('Converting ID (tahlili) tafsirs...');
+const tafsirTahliliId: TafsirVerse[] = tafsirs.data.map((a) => ({
+  id: a.id,
+  chapter: a.surah_id,
+  verse: a.ayah,
+  text: a.tafsir.tahlili?.trim(),
+  arabic: a.arabic?.trim(),
+  translation: a.translation?.trim(),
+}));
+
 console.log('Writing quran meta...');
 fse.writeJSONSync(
   './quran/meta.json',
@@ -113,6 +135,32 @@ console.log('Writing quran ID...');
 fse.writeJSONSync(
   './quran/id.json',
   { lang: 'id', chapters: chaptersId, verses: versesId },
+  { spaces: 2 }
+);
+
+console.log('Writing tafsir-wajiz ID...');
+fse.writeJSONSync(
+  './tafsir/kemenag-wajiz-id.json',
+  {
+    lang: 'id',
+    title: 'Wajiz',
+    author: 'Kemenag RI',
+    chapters: chaptersId,
+    verses: tafsirWajizId,
+  },
+  { spaces: 2 }
+);
+
+console.log('Writing tafsir-tahlili ID...');
+fse.writeJSONSync(
+  './tafsir/kemenag-tahlili-id.json',
+  {
+    lang: 'id',
+    title: 'Tahlili',
+    author: 'kemenag',
+    chapters: chaptersId,
+    verses: tafsirTahliliId,
+  },
   { spaces: 2 }
 );
 

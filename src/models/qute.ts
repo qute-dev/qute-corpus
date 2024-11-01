@@ -21,22 +21,29 @@ export interface Chapter {
   location: LocationType;
 }
 
-export interface Verse {
+export interface BaseVerse {
   id: number;
   chapter: number;
   verse: number;
+  text?: string;
+}
+
+export interface Verse extends BaseVerse {
   page: number;
   hizb: number;
   juz: number;
   manzil: number;
-  text?: string;
   words?: string[];
   footnotes?: string;
 }
 
 export interface Tafsir {
-  id: number;
-  chapter: number;
-  verse: number;
-  text: string;
+  lang: 'ar' | 'id';
+  title: string;
+  author: string;
+  verses: TafsirVerse[];
+}
+export interface TafsirVerse extends BaseVerse {
+  arabic: string;
+  translation: string;
 }
