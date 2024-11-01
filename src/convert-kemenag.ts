@@ -163,6 +163,3 @@ fse.writeJSONSync(
   },
   { spaces: 2 }
 );
-
-// TODO: convert tafsir to qute
-console.log('Converting tafsir...');

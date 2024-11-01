@@ -6,6 +6,13 @@ export interface Quran {
   verses: Verse[];
 }
 
+export interface Tafsir {
+  lang: 'ar' | 'id';
+  title: string;
+  author: string;
+  verses: TafsirVerse[];
+}
+
 export interface Meta {
   chapters: Chapter[];
   verses: Verse[];
@@ -37,12 +44,6 @@ export interface Verse extends BaseVerse {
   footnotes?: string;
 }
 
-export interface Tafsir {
-  lang: 'ar' | 'id';
-  title: string;
-  author: string;
-  verses: TafsirVerse[];
-}
 export interface TafsirVerse extends BaseVerse {
   arabic: string;
   translation: string;
