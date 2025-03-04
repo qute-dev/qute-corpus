@@ -144,7 +144,7 @@ fse.writeJSONSync(
   {
     lang: 'id',
     title: 'Wajiz',
-    author: 'Kemenag RI',
+    author: 'kemenag',
     chapters: chaptersId,
     verses: tafsirWajizId,
   },

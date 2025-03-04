@@ -12,6 +12,7 @@ export function loadQuran() {
   const meta = fse.readJsonSync(path.join(quranDir, 'meta.json')) as Meta;
   const ar = fse.readJsonSync(path.join(quranDir, 'ar.json')) as Quran;
   const id = fse.readJsonSync(path.join(quranDir, 'id.json')) as Quran;
+
   const tafsirs = [
     fse.readJsonSync(path.join(tafsirDir, 'tafsir-wajiz-id.json')) as Tafsir,
     fse.readJsonSync(path.join(tafsirDir, 'tafsir-tahlili-id.json')) as Tafsir,
