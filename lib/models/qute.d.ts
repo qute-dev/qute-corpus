@@ -4,6 +4,12 @@ export interface Quran {
     chapters: Chapter[];
     verses: Verse[];
 }
+export interface Tafsir {
+    lang: 'ar' | 'id';
+    title: string;
+    author: string;
+    verses: TafsirVerse[];
+}
 export interface Meta {
     chapters: Chapter[];
     verses: Verse[];
@@ -17,22 +23,22 @@ export interface Chapter {
     page: number;
     location: LocationType;
 }
-export interface Verse {
+export interface BaseVerse {
     id: number;
     chapter: number;
     verse: number;
+    text?: string;
+}
+export interface Verse extends BaseVerse {
     page: number;
     hizb: number;
     juz: number;
     manzil: number;
-    text?: string;
     words?: string[];
     footnotes?: string;
 }
-export interface Tafsir {
-    id: number;
-    chapter: number;
-    verse: number;
-    text: string;
+export interface TafsirVerse extends BaseVerse {
+    arabic: string;
+    translation: string;
 }
 //# sourceMappingURL=qute.d.ts.map
